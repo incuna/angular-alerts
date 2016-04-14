@@ -4,7 +4,8 @@
 
     var alerts = angular.module('alerts', []);
 
-    alerts.factory('AlertsFactory', ['$rootScope',
+    alerts.factory('AlertsFactory', [
+        '$rootScope',
         function ($rootScope) {
             return function () {
                 var store = [];
