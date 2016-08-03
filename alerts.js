@@ -6,7 +6,7 @@
 
     alerts.factory('AlertsFactory', [
         '$rootScope',
-        function ($rootScope) {
+        function () {
             return function () {
                 var store = [];
                 var addListeners = [];
@@ -43,7 +43,7 @@
                 this.onClear = function (listener) {
                     clearListeners.push(listener);
                 };
-                
+
             };
         }
     ]);
@@ -57,7 +57,7 @@
                 scope: {
                     alerts: '='
                 },
-                link: function (scope, element, attrs) {
+                link: function (scope) {
                     scope.$watch('alerts', function (alerts) {
                         if (angular.isDefined(alerts)) {
                             // Wire up the alerts
